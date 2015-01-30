@@ -55,10 +55,12 @@
 #define SST_MIX_VAD		SST_MIX(17)
 #define SST_MIX_FM		SST_MIX(18)
 
-#define SST_MIX_PCM3            SST_MIX(19)
-#define SST_MIX_PCM4            SST_MIX(20)
-#define SST_MIX_HF_SNS_3	SST_MIX(21)
-#define SST_MIX_HF_SNS_4	SST_MIX(22)
+#define SST_MIX_MEDIA0          SST_MIX(19)
+#define SST_MIX_MEDIA1          SST_MIX(20)
+#define SST_MIX_PCM3            SST_MIX(21)
+#define SST_MIX_PCM4            SST_MIX(22)
+#define SST_MIX_HF_SNS_3	SST_MIX(23)
+#define SST_MIX_HF_SNS_4	SST_MIX(24)
 
 #define SST_NUM_MIX		(SST_MIX_HF_SNS_4 + 1)
 
@@ -95,7 +97,11 @@
 #define SST_IP_PCM1		SST_MIX_IP(14)
 #define SST_IP_LOW_PCM0		SST_MIX_IP(15)
 #define SST_IP_FM		SST_MIX_IP(16)
-#define SST_IP_PCM2		SST_MIX_IP(17)
+#define SST_IP_MEDIA0           SST_MIX_IP(17)
+#define SST_IP_MEDIA1           SST_MIX_IP(18)
+#define SST_IP_MEDIA2           SST_MIX_IP(19)
+#define SST_IP_MEDIA3           SST_MIX_IP(20)
+#define SST_IP_PCM2		SST_MIX_IP(21)
 
 #define SST_IP_LAST		SST_IP_PCM2
 
@@ -198,6 +204,7 @@ enum sst_path_index {
 	SST_PATH_INDEX_PROBE7_PIPE_IN           = (0x99 << SST_PATH_ID_SHIFT),
 	SST_PATH_INDEX_PROBE8_PIPE_IN           = (0x9A << SST_PATH_ID_SHIFT),
 
+	SST_PATH_INDEX_MEDIA3_IN                = (0x9C << SST_PATH_ID_SHIFT),
 	SST_PATH_INDEX_LOW_PCM0_IN		= (0x9D << SST_PATH_ID_SHIFT),
 
 	SST_PATH_INDEX_RESERVED                 = (0xFF << SST_PATH_ID_SHIFT),
@@ -227,6 +234,7 @@ enum sst_swm_inputs {
 	SST_SWM_IN_MEDIA1	= (SST_PATH_INDEX_MEDIA1_IN	  | SST_DEFAULT_CELL_NBR), /* Part of Media Mixer */
 	SST_SWM_IN_MEDIA2	= (SST_PATH_INDEX_MEDIA2_IN	  | SST_DEFAULT_CELL_NBR), /* Part of Media Mixer */
 	SST_SWM_IN_FM		= (SST_PATH_INDEX_FM_IN		  | SST_DEFAULT_CELL_NBR),
+	SST_SWM_IN_MEDIA3       = (SST_PATH_INDEX_MEDIA3_IN       | SST_DEFAULT_CELL_NBR), /* Part of Media Mixer */
 	SST_SWM_IN_LOW_PCM0	= (SST_PATH_INDEX_LOW_PCM0_IN	  | SST_DEFAULT_CELL_NBR),
 	SST_SWM_IN_END		= (SST_PATH_INDEX_RESERVED	  | SST_DEFAULT_CELL_NBR)
 };
