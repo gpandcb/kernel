@@ -1129,7 +1129,6 @@ static int sst_soc_probe(struct snd_soc_platform *platform)
 	    INTEL_MID_BOARD(1, TABLET, BYT))
 		return sst_platform_clv_init(platform);
 	if (INTEL_MID_BOARD(1, PHONE, MRFL) ||
-			INTEL_MID_BOARD(1, PHONE, RBY) ||
 			INTEL_MID_BOARD(1, TABLET, MRFL) ||
 			INTEL_MID_BOARD(1, PHONE, MOFD) ||
 			INTEL_MID_BOARD(1, TABLET, MOFD)) {
@@ -1295,9 +1294,7 @@ static int sst_platform_probe(struct platform_device *pdev)
 	pdata->pdev_strm_map = dpcm_strm_map;
 	pdata->strm_map_size = ARRAY_SIZE(dpcm_strm_map);
 
-	if (INTEL_MID_BOARD(1, PHONE, MRFL) ||
-		INTEL_MID_BOARD(1, PHONE, RBY) ||
-		INTEL_MID_BOARD(1, TABLET, MRFL)) {
+	if (INTEL_MID_BOARD(1, PHONE, MRFL) || INTEL_MID_BOARD(1, TABLET, MRFL)) {
 		pdata->pdev_strm_map = dpcm_strm_map_mrfld;
 		pr_info("overriding dpcm stream map for sand\n");
 	}
